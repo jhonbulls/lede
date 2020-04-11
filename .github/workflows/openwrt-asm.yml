@@ -7,17 +7,15 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt-基本版本
+name: OpenWrt-CI
 
 on:
-
   push:
     branches: 
-      - master
+      - CI-demo
   #     ↑↑↑ 改成你的分支名, 一般是master
-    
-  schedule:
-    - cron: 0 20 * * *
+  # schedule:
+  #   - cron: 0 20 * * *
   # release:
   #   types: [published]
 
@@ -29,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: master
+          ref: CI-demo
         #      ↑↑↑ 改成你的分支名, 一般是master
 
       - name: Initialization environment
